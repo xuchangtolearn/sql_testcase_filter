@@ -1,0 +1,330 @@
+[WARNING] Error checking NULLs in airport.%_Change_2007 of /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/aircraft/aircraft.sqlite: near "%": syntax error
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/assets_maintenance/assets_maintenance.sqlite
+  Table: Maintenance_Contracts
+    Column 'other_contract_details' has 15 NULL values.
+  Table: Parts
+    Column 'other_part_details' has 3 NULL values.
+  Table: Staff
+    Column 'other_staff_details' has 11 NULL values.
+  Table: Assets
+    Column 'other_asset_details' has 11 NULL values.
+  Table: Maintenance_Engineers
+    Column 'other_details' has 13 NULL values.
+  Table: Fault_Log
+    Column 'other_fault_details' has 15 NULL values.
+  Table: Engineer_Visits
+    Column 'other_visit_details' has 15 NULL values.
+  Table: Part_Faults
+    Column 'other_fault_details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/behavior_monitoring/behavior_monitoring.sqlite
+  Table: Addresses
+    Column 'line_2' has 20 NULL values.
+    Column 'line_3' has 20 NULL values.
+    Column 'other_address_details' has 20 NULL values.
+  Table: Students
+    Column 'other_student_details' has 11 NULL values.
+  Table: Teachers
+    Column 'other_details' has 14 NULL values.
+  Table: Assessment_Notes
+    Column 'text_of_notes' has 15 NULL values.
+    Column 'other_details' has 15 NULL values.
+  Table: Behavior_Incident
+    Column 'incident_summary' has 15 NULL values.
+    Column 'recommendations' has 12 NULL values.
+    Column 'other_details' has 15 NULL values.
+  Table: Detention
+    Column 'detention_summary' has 15 NULL values.
+    Column 'other_details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/chinook_1/chinook_1.sqlite
+  Table: Customer
+    Column 'Company' has 49 NULL values.
+    Column 'State' has 29 NULL values.
+    Column 'PostalCode' has 4 NULL values.
+    Column 'Phone' has 1 NULL values.
+    Column 'Fax' has 47 NULL values.
+  Table: Employee
+    Column 'ReportsTo' has 1 NULL values.
+  Table: Invoice
+    Column 'BillingState' has 202 NULL values.
+    Column 'BillingPostalCode' has 28 NULL values.
+  Table: Track
+    Column 'Composer' has 978 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/company_1/company_1.sqlite
+  Table: works_on
+    Column 'Hours' has 1 NULL values.
+  Table: employee
+    Column 'Super_ssn' has 1 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/cre_Doc_Template_Mgt/cre_Doc_Template_Mgt.sqlite
+  Table: Documents
+    Column 'Other_Details' has 15 NULL values.
+  Table: Paragraphs
+    Column 'Other_Details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/cre_Doc_Tracking_DB/cre_Doc_Tracking_DB.sqlite
+  Table: All_Documents
+    Column 'Document_Description' has 15 NULL values.
+    Column 'Other_Details' has 15 NULL values.
+  Table: Employees
+    Column 'Other_Details' has 15 NULL values.
+  Table: Documents_to_be_Destroyed
+    Column 'Other_Details' has 11 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/cre_Docs_and_Epenses/cre_Docs_and_Epenses.sqlite
+  Table: Documents
+    Column 'Document_Description' has 15 NULL values.
+    Column 'Other_Details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/cre_Drama_Workshop_Groups/cre_Drama_Workshop_Groups.sqlite
+  Table: Addresses
+    Column 'Other_Details' has 20 NULL values.
+  Table: Products
+    Column 'Product_Description' has 15 NULL values.
+    Column 'Other_Product_Service_Details' has 15 NULL values.
+  Table: Marketing_Regions
+    Column 'Other_Details' has 8 NULL values.
+  Table: Clients
+    Column 'Other_Details' has 17 NULL values.
+  Table: Drama_Workshop_Groups
+    Column 'Other_Details' has 12 NULL values.
+  Table: Performers
+    Column 'Other_Details' has 17 NULL values.
+  Table: Customers
+    Column 'Other_Details' has 13 NULL values.
+  Table: Stores
+    Column 'Other_Details' has 6 NULL values.
+  Table: Bookings
+    Column 'Other_Order_Details' has 15 NULL values.
+  Table: Customer_Orders
+    Column 'Other_Order_Details' has 15 NULL values.
+  Table: Order_Items
+    Column 'Other_Item_Details' has 15 NULL values.
+  Table: Invoices
+    Column 'Other_Item_Details' has 15 NULL values.
+  Table: Services
+    Column 'Product_Description' has 15 NULL values.
+    Column 'Other_Product_Service_Details' has 15 NULL values.
+  Table: Invoice_Items
+    Column 'Other_Item_Details' has 1 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/cre_Theme_park/cre_Theme_park.sqlite
+  Table: Locations
+    Column 'Other_Details' has 15 NULL values.
+  Table: Hotels
+    Column 'other_hotel_details' has 20 NULL values.
+  Table: Tourist_Attractions
+    Column 'Description' has 15 NULL values.
+    Column 'Opening_Hours' has 15 NULL values.
+    Column 'Other_Details' has 15 NULL values.
+  Table: Royal_Family
+    Column 'Royal_Family_Details' has 2 NULL values.
+  Table: Photos
+    Column 'Description' has 15 NULL values.
+    Column 'Other_Details' has 15 NULL values.
+  Table: Staff
+    Column 'Other_Details' has 20 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/customers_and_addresses/customers_and_addresses.sqlite
+  Table: Addresses
+    Column 'other_address_details' has 15 NULL values.
+  Table: Customers
+    Column 'other_customer_details' has 13 NULL values.
+  Table: Customer_Orders
+    Column 'order_details' has 10 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/customers_and_invoices/customers_and_invoices.sqlite
+  Table: Orders
+    Column 'order_details' has 15 NULL values.
+  Table: Financial_Transactions
+    Column 'transaction_comment' has 15 NULL values.
+    Column 'other_transaction_details' has 15 NULL values.
+  Table: Order_Items
+    Column 'other_order_item_details' has 15 NULL values.
+  Table: Invoice_Line_Items
+    Column 'derived_vat_payable' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/customers_campaigns_ecommerce/customers_campaigns_ecommerce.sqlite
+  Table: Customers
+    Column 'customer_login' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/customers_card_transactions/customers_card_transactions.sqlite
+  Table: Customers
+    Column 'other_customer_details' has 15 NULL values.
+  Table: Financial_Transactions
+    Column 'transaction_comment' has 15 NULL values.
+    Column 'other_transaction_details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/flight_4/flight_4.sqlite
+  Table: routes
+    Column 'alid' has 475 NULL values.
+    Column 'codeshare' has 52675 NULL values.
+  Table: airlines
+    Column 'iata' has 1 NULL values.
+    Column 'icao' has 188 NULL values.
+    Column 'callsign' has 3 NULL values.
+    Column 'country' has 3 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/hospital_1/hospital_1.sqlite
+  Table: Appointment
+    Column 'PrepNurse' has 2 NULL values.
+  Table: Prescribes
+    Column 'Appointment' has 1 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/movie_1/movie_1.sqlite
+  Table: Movie
+    Column 'director' has 1 NULL values.
+  Table: Rating
+    Column 'ratingDate' has 2 NULL values.
+[WARNING] Error checking NULLs in performance.Official_ratings_(millions) of /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/orchestra/orchestra.sqlite: no such column: millions
+[WARNING] Error checking NULLs in people.Home Town of /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/perpetrator/perpetrator.sqlite: near "Town": syntax error
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/products_gen_characteristics/products_gen_characteristics.sqlite
+  Table: Characteristics
+    Column 'other_characteristic_details' has 15 NULL values.
+  Table: Products
+    Column 'other_product_details' has 15 NULL values.
+[WARNING] Error checking NULLs in train.From of /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/railway/railway.sqlite: near "From": syntax error
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/real_estate_properties/real_estate_properties.sqlite
+  Table: Properties
+    Column 'apt_feature_3' has 15 NULL values.
+    Column 'fld_feature_1' has 15 NULL values.
+    Column 'fld_feature_2' has 15 NULL values.
+    Column 'fld_feature_3' has 15 NULL values.
+    Column 'hse_feature_1' has 15 NULL values.
+    Column 'hse_feature_2' has 15 NULL values.
+    Column 'hse_feature_3' has 15 NULL values.
+    Column 'oth_feature_1' has 15 NULL values.
+    Column 'oth_feature_2' has 15 NULL values.
+    Column 'oth_feature_3' has 15 NULL values.
+    Column 'shp_feature_1' has 15 NULL values.
+    Column 'shp_feature_2' has 15 NULL values.
+    Column 'shp_feature_3' has 15 NULL values.
+    Column 'other_property_details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/sakila_1/sakila_1.sqlite
+  Table: address
+    Column 'address2' has 4 NULL values.
+  Table: film
+    Column 'original_language_id' has 1000 NULL values.
+  Table: payment
+    Column 'rental_id' has 5 NULL values.
+  Table: rental
+    Column 'return_date' has 183 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/soccer_1/soccer_1.sqlite
+  Table: Player_Attributes
+    Column 'overall_rating' has 836 NULL values.
+    Column 'potential' has 836 NULL values.
+    Column 'preferred_foot' has 836 NULL values.
+    Column 'attacking_work_rate' has 3230 NULL values.
+    Column 'defensive_work_rate' has 836 NULL values.
+    Column 'crossing' has 836 NULL values.
+    Column 'finishing' has 836 NULL values.
+    Column 'heading_accuracy' has 836 NULL values.
+    Column 'short_passing' has 836 NULL values.
+    Column 'volleys' has 2713 NULL values.
+    Column 'dribbling' has 836 NULL values.
+    Column 'curve' has 2713 NULL values.
+    Column 'free_kick_accuracy' has 836 NULL values.
+    Column 'long_passing' has 836 NULL values.
+    Column 'ball_control' has 836 NULL values.
+    Column 'acceleration' has 836 NULL values.
+    Column 'sprint_speed' has 836 NULL values.
+    Column 'agility' has 2713 NULL values.
+    Column 'reactions' has 836 NULL values.
+    Column 'balance' has 2713 NULL values.
+    Column 'shot_power' has 836 NULL values.
+    Column 'jumping' has 2713 NULL values.
+    Column 'stamina' has 836 NULL values.
+    Column 'strength' has 836 NULL values.
+    Column 'long_shots' has 836 NULL values.
+    Column 'aggression' has 836 NULL values.
+    Column 'interceptions' has 836 NULL values.
+    Column 'positioning' has 836 NULL values.
+    Column 'vision' has 2713 NULL values.
+    Column 'penalties' has 836 NULL values.
+    Column 'marking' has 836 NULL values.
+    Column 'standing_tackle' has 836 NULL values.
+    Column 'sliding_tackle' has 2713 NULL values.
+    Column 'gk_diving' has 836 NULL values.
+    Column 'gk_handling' has 836 NULL values.
+    Column 'gk_kicking' has 836 NULL values.
+    Column 'gk_positioning' has 836 NULL values.
+    Column 'gk_reflexes' has 836 NULL values.
+  Table: Team
+    Column 'team_fifa_api_id' has 11 NULL values.
+  Table: Team_Attributes
+    Column 'buildUpPlayDribbling' has 969 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/store_1/store_1.sqlite
+  Table: employees
+    Column 'reports_to' has 1 NULL values.
+  Table: customers
+    Column 'company' has 49 NULL values.
+    Column 'state' has 29 NULL values.
+    Column 'postal_code' has 4 NULL values.
+    Column 'phone' has 1 NULL values.
+    Column 'fax' has 47 NULL values.
+  Table: invoices
+    Column 'billing_state' has 202 NULL values.
+    Column 'billing_postal_code' has 28 NULL values.
+  Table: tracks
+    Column 'composer' has 978 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/student_assessment/student_assessment.sqlite
+  Table: Courses
+    Column 'other_details' has 6 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/student_transcripts_tracking/student_transcripts_tracking.sqlite
+  Table: Addresses
+    Column 'line_3' has 15 NULL values.
+    Column 'other_address_details' has 15 NULL values.
+  Table: Courses
+    Column 'other_details' has 15 NULL values.
+  Table: Departments
+    Column 'other_details' has 15 NULL values.
+  Table: Degree_Programs
+    Column 'other_details' has 15 NULL values.
+  Table: Sections
+    Column 'other_details' has 15 NULL values.
+  Table: Semesters
+    Column 'other_details' has 15 NULL values.
+  Table: Student_Enrolment
+    Column 'other_details' has 15 NULL values.
+  Table: Transcripts
+    Column 'other_details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/tracking_grants_for_research/tracking_grants_for_research.sqlite
+  Table: Project_Outcomes
+    Column 'outcome_details' has 15 NULL values.
+  Table: Project_Staff
+    Column 'other_details' has 15 NULL values.
+[WARNING] Error checking NULLs in Tasks.eg Agree Objectives of /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/tracking_grants_for_research/tracking_grants_for_research.sqlite: near "Agree": syntax error
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/tracking_orders/tracking_orders.sqlite
+  Table: Orders
+    Column 'order_details' has 15 NULL values.
+  Table: Products
+    Column 'product_details' has 15 NULL values.
+  Table: Order_Items
+    Column 'order_item_details' has 15 NULL values.
+  Table: Shipments
+    Column 'other_shipment_details' has 15 NULL values.
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/tracking_share_transactions/tracking_share_transactions.sqlite
+  Table: Transactions
+    Column 'other_details' has 15 NULL values.
+[WARNING] Error checking NULLs in TV_series.18_49_Rating_Share of /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/tvshow/tvshow.sqlite: unrecognized token: "18_49_Rating_Share"
+
+Database: /mnt/public/data/lh/data/xc/sql_test_case_generation/data/database/world_1/world_1.sqlite
+  Table: country
+    Column 'IndepYear' has 47 NULL values.
+    Column 'LifeExpectancy' has 17 NULL values.
+    Column 'GNPOld' has 61 NULL values.
+    Column 'HeadOfState' has 1 NULL values.
+    Column 'Capital' has 7 NULL values.

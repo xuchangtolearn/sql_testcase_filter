@@ -1,0 +1,806 @@
+{
+  "prompts": [
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[1, 'Five', 'September18–September25', 983, 4.05, 0]\n[8, 'Two', 'October24–October26', 995, 13.0, 0]\n[2, 'Eight', 'August3–August10', 995, 1.49, 52]\n[4, 'Seven', 'May19 –October26', 983, 13.0, 7]\n[7, 'Three', 'May19–May25', 961, 13.0, 0]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[1, 'CY', 'Antarctica']\n[8, 'AF', 'Antigua and Barbuda']\n[9, 'CZ', 'Djibouti']\n[5, 'AO', 'Algeria']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[9, 7, 12.0]\n[5, 1, 10.0]\n[8, 7, 10.0]\n[1, 2, 15.0]\n[1, 1, 15.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 4\nRows:\n[7, 'Seven', 'August26–September2', 1002, 10.75, 71]\n[9, 'Four', 'September7–September17', 995, 4.05, 7]\n[6, 'Seven', 'August3–August10', 972, 13.0, 0]\n[2, 'Five', 'September7–September17', 983, 10.75, 7]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 5\nRows:\n[2, 'CY', 'Cyprus']\n[3, 'DJ', 'American Samoa']\n[7, 'AO', 'Afghanistan']\n[4, 'AG', 'Anguilla']\n[1, 'AI', 'Afghanistan']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[2, 2, 30.0]\n[3, 2, 15.0]\n[3, 9, 12.0]\n[4, 6, 12.0]\n[7, 6, 12.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[3, '9 cyclones', 'May19 –October26', 977, 13.0, 3]\n[6, 'Four', 'August5–August14', 1007, 4.05, 0]\n[2, 'Eight', 'September18–September25', 961, 10.75, 71]\n[1, 'Three', 'September22–September28', 995, 1.49, 3]\n[7, 'Nine', 'August5–August14', 995, 13.0, 2]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[5, 'AI', 'Antarctica']\n[1, 'DZ', 'Denmark']\n[4, 'AG', 'Czech Republic']\n[7, 'AD', 'American Samoa']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[5, 7, 15.0]\n[5, 2, 22.0]\n[4, 7, 10.0]\n[4, 3, 10.0]\n[1, 1, 30.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[2, 'Six', 'September22–September28', 995, 13.0, 7]\n[10, 'One', 'September22–September28', 995, 4.05, 0]\n[9, 'Nine', 'August5–August14', 983, 29.3, 0]\n[5, 'Three', 'August26–September2', 961, 1.49, 7]\n[4, 'Five', 'August26–September2', 977, 13.0, 0]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[7, 'AQ', 'Anguilla']\n[6, 'AF', 'Cyprus']\n[3, 'DS', 'Cyprus']\n[4, 'DS', 'Albania']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[7, 5, 12.0]\n[7, 2, 10.0]\n[6, 9, 37.0]\n[3, 4, 37.0]\n[3, 9, 22.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[7, 'Seven', 'August3–August10', 983, 13.0, 0]\n[1, 'Seven', 'October24–October26', 995, 13.0, 7]\n[8, 'Five', 'September18–September25', 972, 13.0, 0]\n[10, 'Nine', 'August5–August14', 1002, 13.0, 71]\n[6, 'One', 'October20–October24', 1007, 13.0, 3]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[9, 'AO', 'Antarctica']\n[11, 'AF', 'Djibouti']\n[13, 'AO', 'Anguilla']\n[5, 'AG', 'Angola']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 4\nRows:\n[9, 10, 22.0]\n[13, 6, 22.0]\n[13, 8, 10.0]\n[11, 1, 12.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 3\nRows:\n[3, 'One', 'August3–August10', 961, 0.039, 0]\n[7, '9 cyclones', 'September22–September28', 1002, 13.0, 3]\n[6, 'Eight', 'May19 –October26', 972, 13.0, 3]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[7, 'AG', 'Andorra']\n[5, 'AG', 'Denmark']\n[13, 'CZ', 'Denmark']\n[6, 'AL', 'Algeria']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[5, 6, 12.0]\n[13, 7, 10.0]\n[6, 6, 30.0]\n[7, 6, 10.0]\n[13, 3, 10.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[2, 'Five', 'August5–August14', 1007, 13.0, 2]\n[9, 'Two', 'September22–September28', 1002, 13.0, 0]\n[8, 'Seven', 'October20–October24', 972, 13.0, 7]\n[1, 'Three', 'September7–September17', 988, 13.0, 2]\n[4, 'Four', 'August3–August10', 995, 13.0, 71]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[12, 'CY', 'Andorra']\n[13, 'AO', 'Afghanistan']\n[7, 'AQ', 'Angola']\n[10, 'AF', 'Anguilla']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 4\nRows:\n[12, 4, 30.0]\n[10, 1, 10.0]\n[10, 8, 15.0]\n[7, 4, 15.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 4\nRows:\n[9, 'Two', 'September18–September25', 1002, 29.3, 7]\n[10, 'Two', 'September18–September25', 961, 13.0, 7]\n[4, 'Two', 'August3–August10', 977, 1.49, 0]\n[1, 'Five', 'August5–August14', 1007, 10.75, 7]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[1, 'CY', 'American Samoa']\n[6, 'AI', 'Algeria']\n[2, 'AQ', 'Andorra']\n[11, 'DS', 'American Samoa']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[2, 9, 22.0]\n[6, 10, 22.0]\n[6, 4, 22.0]\n[11, 9, 12.0]\n[2, 1, 10.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[7, 'Six', 'August5–August14', 961, 13.0, 2]\n[1, 'Eight', 'September18–September25', 988, 13.0, 0]\n[5, 'Six', 'October20–October24', 995, 4.05, 3]\n[4, 'Eight', 'May19–May25', 988, 13.0, 0]\n[2, 'Two', 'August26–September2', 961, 0.039, 0]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[5, 'AL', 'Anguilla']\n[13, 'AI', 'Djibouti']\n[11, 'CY', 'Cyprus']\n[1, 'DZ', 'Czech Republic']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 5\nRows:\n[13, 1, 37.0]\n[1, 7, 10.0]\n[11, 1, 37.0]\n[1, 4, 30.0]\n[5, 7, 22.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?\n#Input database:\nTable: storm\nColumns: ['storm_id', 'name', 'dates_active', 'max_speed', 'damage_millions_usd', 'number_deaths']\nNumber of rows: 5\nRows:\n[7, 'Two', 'October20–October24', 972, 1.49, 0]\n[1, 'One', 'August5–August14', 972, 13.0, 52]\n[8, 'Seven', 'August26–September2', 961, 29.3, 52]\n[10, 'One', 'May19–May25', 1007, 4.05, 71]\n[3, 'Five', 'August26–September2', 988, 13.0, 0]\n\nTable: region\nColumns: ['region_id', 'region_code', 'region_name']\nNumber of rows: 4\nRows:\n[5, 'CZ', 'American Samoa']\n[11, 'DK', 'Antarctica']\n[10, 'DZ', 'Djibouti']\n[13, 'AO', 'Angola']\n\nTable: affected_region\nColumns: ['region_id', 'storm_id', 'number_city_affected']\nNumber of rows: 4\nRows:\n[11, 1, 37.0]\n[11, 10, 10.0]\n[10, 10, 12.0]\n[10, 1, 15.0]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 3\nRows:\n[257, 'Life Insurance', '813.178.8211x557']\n[630, 'Mortgage Insurance', '1-446-940-9907x257']\n[993, 'Mortgage Insurance', '889-572-0609x552']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 5\nRows:\n[300, 'Life Insurance', '889-572-0609x552']\n[346, 'Travel Insurance', '813.178.8211x557']\n[583, 'Mortgage Insurance', '813.178.8211x557']\n[751, 'Life Insurance', '+85(6)1302858396']\n[927, 'Property Insurance', '+16(2)5838999222']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 5\nRows:\n[246, 'Property Insurance', '242.763.9214']\n[257, 'Life Insurance', '00481937923']\n[346, 'Property Insurance', '481937924']\n[472, 'Property Insurance', '813.178.8211x557']\n[927, 'Life Insurance', '1-381-132-0127x3801']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 3\nRows:\n[300, 'Property Insurance', '1-797-927-3585x9321']\n[472, 'Life Insurance', '1-381-132-0127x3801']\n[993, 'Travel Insurance', '405.090.8654x021']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 4\nRows:\n[257, 'Life Insurance', '242.763.9214']\n[346, 'Mortgage Insurance', '481937924']\n[636, 'Property Insurance', '1-138-841-3073']\n[879, 'Mortgage Insurance', '00481937923']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 3\nRows:\n[300, 'Mortgage Insurance', '(777)537-7792']\n[346, 'Mortgage Insurance', '242.763.9214']\n[927, 'Mortgage Insurance', '1-381-132-0127x3801']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 4\nRows:\n[257, 'Life Insurance', '405.090.8654x021']\n[583, 'Property Insurance', '00481937923']\n[586, 'Property Insurance', '(777)537-7792']\n[927, 'Mortgage Insurance', '481937922']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 5\nRows:\n[346, 'Property Insurance', '+85(6)1302858396']\n[366, 'Mortgage Insurance', '1-797-927-3585x9321']\n[630, 'Property Insurance', '1-446-940-9907x257']\n[636, 'Property Insurance', '00481937923']\n[879, 'Life Insurance', '1-381-132-0127x3801']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 5\nRows:\n[301, 'Mortgage Insurance', '+16(2)5838999222']\n[346, 'Property Insurance', '481937922']\n[583, 'Life Insurance', '405.090.8654x021']\n[586, 'Life Insurance', '405.090.8654x021']\n[927, 'Property Insurance', '+16(2)5838999222']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which policy type appears most frequently in the available policies?\n#Input database:\nTable: available_policies\nColumns: ['policy_id', 'policy_type_code', 'customer_phone']\nNumber of rows: 4\nRows:\n[300, 'Life Insurance', '481937922']\n[346, 'Life Insurance', '1-446-940-9907x257']\n[472, 'Life Insurance', '242.763.9214']\n[583, 'Property Insurance', '405.090.8654x021']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 4\nRows:\n[104, 'Gone with the Wind']\n[106, 'Avatar']\n[108, 'Raiders of the Lost Ark']\n[105, 'Avatar']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[106, 4]\n[105, 3]\n[104, 4]\n[104, 2]\n[105, 2]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 4\nRows:\n[101, 'Snow White']\n[104, 'Raiders of the Lost Ark']\n[102, 'Star Wars']\n[106, 'Raiders of the Lost Ark']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[102, 4]\n[101, 2]\n[104, 4]\n[101, 4]\n[106, 4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 3\nRows:\n[104, 'Raiders of the Lost Ark']\n[103, 'Titanic']\n[108, 'Avatar']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[108, 2]\n[103, 4]\n[103, 4]\n[108, 2]\n[103, 4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 3\nRows:\n[106, 'Gone with the Wind']\n[108, 'Star Wars']\n[107, 'E.T.']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[106, 5]\n[108, 4]\n[107, 4]\n[106, 3]\n[107, 4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 3\nRows:\n[103, 'Titanic']\n[101, 'Raiders of the Lost Ark']\n[107, 'Avatar']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[101, 4]\n[107, 3]\n[107, 2]\n[107, 5]\n[107, 2]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 3\nRows:\n[107, 'E.T.']\n[108, 'Gone with the Wind']\n[101, 'Avatar']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[108, 2]\n[101, 2]\n[101, 3]\n[107, 2]\n[108, 4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 3\nRows:\n[104, 'Titanic']\n[107, 'The Sound of Music']\n[101, 'The Sound of Music']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[107, 2]\n[107, 5]\n[101, 4]\n[104, 3]\n[104, 3]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 5\nRows:\n[101, 'The Sound of Music']\n[105, 'Gone with the Wind']\n[104, 'Star Wars']\n[106, 'Raiders of the Lost Ark']\n[108, 'The Sound of Music']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[104, 3]\n[105, 3]\n[105, 3]\n[101, 2]\n[106, 3]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 5\nRows:\n[102, 'Titanic']\n[104, 'Avatar']\n[107, 'E.T.']\n[108, 'Gone with the Wind']\n[103, 'Gone with the Wind']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[103, 4]\n[104, 2]\n[104, 2]\n[102, 4]\n[103, 3]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are the titles and average ratings for all movies that have the lowest average rating?\n#Input database:\nTable: movie\nColumns: ['mid', 'title']\nNumber of rows: 4\nRows:\n[104, 'Gone with the Wind']\n[101, 'Raiders of the Lost Ark']\n[103, 'Star Wars']\n[102, 'Snow White']\n\nTable: rating\nColumns: ['mid', 'stars']\nNumber of rows: 5\nRows:\n[103, 3]\n[103, 3]\n[102, 4]\n[102, 3]\n[104, 4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 4\nRows:\n['Carroll']\n['Carroll']\n['Mraz']\n['Turner']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 4\nRows:\n['Mertz']\n['Kohler']\n['Bruen']\n['Sanford']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Rogahn']\n['Rogahn']\n['Sawayn']\n['Rogahn']\n['Mertz']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Spinka']\n['Tromp']\n['Ortiz']\n['Schmeler']\n['Goodwin']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 3\nRows:\n['Maggio']\n['Doyle']\n['Jast']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Goodwin']\n['Ortiz']\n['Leuschke']\n['Kohler']\n['Bruen']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Mraz']\n['Macejkovic']\n['Sawayn']\n['Macejkovic']\n['Sawayn']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Trantow']\n['Tromp']\n['Koelpin']\n['Trantow']\n['Leuschke']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 4\nRows:\n['Weissnat']\n['Mertz']\n['Herzog']\n['Jast']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 4\nRows:\n['Koelpin']\n['Mertz']\n['Kohler']\n['Bernhard']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Mertz']\n['Jast']\n['Macejkovic']\n['Sawayn']\n['Mraz']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Bernhard']\n['Bruen']\n['Spinka']\n['Goodwin']\n['Spinka']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 4\nRows:\n['Rogahn']\n['Sawayn']\n['Mraz']\n['Rogahn']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Terry']\n['Bruen']\n['Koelpin']\n['Trantow']\n['Goodwin']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Weissnat']\n['Macejkovic']\n['Weissnat']\n['Mertz']\n['Herzog']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Sanford']\n['Mertz']\n['Leuschke']\n['Tromp']\n['Bruen']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 3\nRows:\n['Mraz']\n['Durgan']\n['Turner']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Leuschke']\n['Trantow']\n['Grant']\n['Bernhard']\n['Kohler']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Which last names are both used by customers and by staff?\n#Input database:\nTable: staff\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Mraz']\n['Macejkovic']\n['Mraz']\n['Mertz']\n['Carroll']\n\nTable: customers\nColumns: ['last_name']\nNumber of rows: 5\nRows:\n['Mertz']\n['Grant']\n['Leuschke']\n['Tromp']\n['Koelpin']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 3\nRows:\n[5, 'Cristobal']\n[6, 'Chauncey']\n[12, 'Karson']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 3\nRows:\n[1, 'red jeans']\n[2, 'mouse']\n[6, 'red jeans']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 5\nRows:\n[5]\n[5]\n[12]\n[6]\n[5]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 4\nRows:\n[3, 12]\n[10, 6]\n[11, 6]\n[12, 6]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 5\nRows:\n[12, 1]\n[11, 6]\n[11, 1]\n[3, 2]\n[11, 2]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 4\nRows:\n[1]\n[2]\n[1]\n[2]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 4\nRows:\n[2, 'Chauncey']\n[9, 'Cristobal']\n[12, 'Darron']\n[15, 'Yasmeen']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 5\nRows:\n[3, 'mic']\n[6, 'keyboard']\n[11, 'monitor']\n[12, 'blue topping']\n[13, 'blue topping']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 5\nRows:\n[15]\n[15]\n[2]\n[15]\n[2]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[1, 12]\n[5, 12]\n[8, 2]\n[10, 9]\n[15, 2]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 4\nRows:\n[10, 6]\n[1, 12]\n[5, 13]\n[1, 13]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 5\nRows:\n[3]\n[3]\n[13]\n[6]\n[13]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 4\nRows:\n[2, 'Lyric']\n[3, 'Ahmed']\n[6, 'Darron']\n[7, 'Yasmeen']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 4\nRows:\n[4, 'keyboard']\n[5, 'drive']\n[6, 'blue jeans']\n[14, 'monitor']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 4\nRows:\n[7]\n[6]\n[3]\n[2]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[8, 6]\n[9, 7]\n[10, 3]\n[13, 2]\n[14, 2]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 5\nRows:\n[8, 4]\n[14, 4]\n[9, 5]\n[9, 14]\n[9, 14]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 5\nRows:\n[14]\n[5]\n[5]\n[14]\n[4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 5\nRows:\n[4, 'Yasmeen']\n[5, 'Jon']\n[8, 'Lyric']\n[11, 'Tara']\n[14, 'Ahmed']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 5\nRows:\n[1, 'monitor']\n[2, 'yellow jeans']\n[3, 'blue jeans']\n[7, 'keyboard']\n[14, 'red jeans']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 5\nRows:\n[8]\n[14]\n[5]\n[4]\n[5]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[2, 5]\n[5, 4]\n[6, 11]\n[13, 11]\n[15, 14]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 5\nRows:\n[13, 2]\n[13, 14]\n[6, 7]\n[5, 3]\n[15, 2]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 5\nRows:\n[1]\n[2]\n[7]\n[1]\n[3]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 4\nRows:\n[9, 'Tara']\n[12, 'Kenya']\n[14, 'Adah']\n[15, 'Yasmeen']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 5\nRows:\n[3, 'speaker']\n[6, 'blue jeans']\n[8, 'keyboard']\n[9, 'monitor']\n[14, 'monitor']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 5\nRows:\n[14]\n[9]\n[12]\n[14]\n[15]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[2, 15]\n[3, 15]\n[6, 12]\n[10, 14]\n[11, 12]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 5\nRows:\n[10, 8]\n[6, 6]\n[10, 9]\n[2, 14]\n[3, 14]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 5\nRows:\n[8]\n[9]\n[14]\n[9]\n[3]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 4\nRows:\n[1, 'Lukas']\n[2, 'Darron']\n[9, 'Kenya']\n[12, 'Lyric']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 5\nRows:\n[1, 'blue topping']\n[2, 'drive']\n[5, 'red topping']\n[7, 'speaker']\n[13, 'yellow topping']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 4\nRows:\n[9]\n[1]\n[9]\n[2]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[1, 2]\n[3, 1]\n[4, 2]\n[10, 9]\n[13, 9]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 5\nRows:\n[13, 7]\n[13, 2]\n[4, 5]\n[3, 2]\n[10, 7]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 4\nRows:\n[5]\n[7]\n[2]\n[1]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 5\nRows:\n[3, 'Yasmeen']\n[4, 'Darron']\n[5, 'Abbie']\n[10, 'Darron']\n[15, 'Darron']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 5\nRows:\n[4, 'yellow jeans']\n[5, 'drive']\n[13, 'red topping']\n[14, 'keyboard']\n[15, 'yellow topping']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 4\nRows:\n[5]\n[10]\n[4]\n[3]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[4, 4]\n[5, 10]\n[8, 10]\n[12, 10]\n[14, 3]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 4\nRows:\n[14, 5]\n[5, 4]\n[14, 15]\n[14, 14]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 4\nRows:\n[5]\n[15]\n[15]\n[4]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 4\nRows:\n[3, 'Lexus']\n[5, 'Jon']\n[9, 'Tara']\n[14, 'Adah']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 3\nRows:\n[1, 'black jeans']\n[5, 'speaker']\n[14, 'mouse']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 5\nRows:\n[9]\n[3]\n[3]\n[5]\n[14]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[5, 9]\n[11, 14]\n[12, 3]\n[13, 9]\n[15, 9]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 5\nRows:\n[12, 14]\n[15, 5]\n[5, 14]\n[11, 14]\n[5, 5]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 4\nRows:\n[1]\n[1]\n[14]\n[14]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 5\nRows:\n[3, 'Tara']\n[8, 'Karson']\n[9, 'Tara']\n[11, 'Abbie']\n[13, 'Abbie']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 4\nRows:\n[2, 'speaker']\n[6, 'speaker']\n[12, 'mouse']\n[13, 'drive']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 5\nRows:\n[9]\n[3]\n[3]\n[11]\n[11]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 5\nRows:\n[2, 9]\n[3, 9]\n[6, 13]\n[14, 8]\n[15, 13]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 4\nRows:\n[3, 6]\n[15, 6]\n[2, 12]\n[14, 6]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 4\nRows:\n[12]\n[6]\n[2]\n[2]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: List the names of all the distinct customers who bought a keyboard.\n#Input database:\nTable: customers\nColumns: ['customer_id', 'customer_name']\nNumber of rows: 3\nRows:\n[8, 'Jon']\n[11, 'Tara']\n[12, 'Tara']\n\nTable: products\nColumns: ['product_id', 'product_name']\nNumber of rows: 5\nRows:\n[3, 'red jeans']\n[6, 'mouse']\n[9, 'black topping']\n[10, 'blue jeans']\n[15, 'keyboard']\n\nTable: customer_addresses\nColumns: ['customer_id']\nNumber of rows: 4\nRows:\n[8]\n[12]\n[11]\n[8]\n\nTable: customer_orders\nColumns: ['order_id', 'customer_id']\nNumber of rows: 3\nRows:\n[3, 12]\n[10, 11]\n[14, 11]\n\nTable: order_items\nColumns: ['order_id', 'product_id']\nNumber of rows: 3\nRows:\n[14, 3]\n[14, 10]\n[3, 9]\n\nTable: product_suppliers\nColumns: ['product_id']\nNumber of rows: 5\nRows:\n[9]\n[10]\n[10]\n[6]\n[9]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['12:00:00']\n['']\n['12:00:00']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[22, 'Argentine']\n[70, 'French']\n[217, 'Italian']\n[368, 'Italian']\n[833, 'French']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 4\nRows:\n['British']\n['British']\n['American']\n['Irish']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[368, '', '']\n[833, '', '']\n[22, '', '5360574']\n[22, '', '']\n[217, '+9:24.32', '']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[833]\n[22]\n[70]\n[70]\n[368]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[833]\n[833]\n[70]\n[22]\n[368]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[217, 55.22550128062109, 'cfifs', 100000]\n[833, 882.8241655715171, 'owhwm', 100000]\n[368, 477.19519201335913, 'jxptz', 100000]\n[22, 477.19519201335913, 'izymn', 99999]\n[833, 55.22550128062109, 'owhwm', 99999]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[70, 155.88992134997582, 'cytxs', 100001]\n[22, 697.7015788560692, 'ckzgy', 100000]\n[217, 311.2559998311779, 'khbhe', 100001]\n[368, 697.7015788560692, 'ckzgy', 100000]\n[833, 155.88992134997582, 'khbhe', 99999]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['']\n['']\n['07:00:00']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[45, 'American']\n[274, 'American']\n[316, 'Swiss']\n[498, 'French']\n[632, 'Spanish']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['British']\n['German']\n['Swiss']\n['British']\n['American']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[45, '', '6455128']\n[498, '', '']\n[45, '', '6382210']\n[498, '', '']\n[632, '', '']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[632]\n[632]\n[316]\n[274]\n[274]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[45]\n[316]\n[632]\n[498]\n[45]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[316, 119.44918178977026, 'jxptz', 100000]\n[274, 119.44918178977026, 'jxptz', 100000]\n[316, 119.44918178977026, 'ugsgu', 100000]\n[316, 477.19519201335913, 'izymn', 100000]\n[498, 119.44918178977026, 'owhwm', 99999]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[498, 981.8764344462566, 'ckzgy', 100001]\n[632, 311.2559998311779, 'bfzjx', 99999]\n[316, 311.2559998311779, 'ckzgy', 100000]\n[632, 981.8764344462566, 'ckzgy', 100000]\n[45, 981.8764344462566, 'ckzgy', 99999]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['12:00:00']\n['14:00:00']\n['']\n['12:00:00']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[4, 'American']\n[20, 'Italian']\n[434, 'British']\n[519, 'Australian']\n[799, 'British']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['German']\n['British']\n['Austrian']\n['British']\n['British']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[799, '', '5862409']\n[4, '', '5691795']\n[799, '', '4708840']\n[799, '33.44', '5393564']\n[799, '52:32.8', '5830401']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[20]\n[20]\n[519]\n[4]\n[434]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[519]\n[4]\n[20]\n[519]\n[4]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[4, 882.8241655715171, 'ugsgu', 99999]\n[20, 909.462245349462, 'owhwm', 99999]\n[4, 477.19519201335913, 'ugsgu', 100001]\n[4, 909.462245349462, 'izymn', 100001]\n[799, 909.462245349462, 'izymn', 99999]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[799, 697.7015788560692, 'bfzjx', 100000]\n[519, 155.88992134997582, 'bfzjx', 99999]\n[20, 155.88992134997582, 'ckzgy', 100000]\n[4, 311.2559998311779, 'cytxs', 99999]\n[4, 981.8764344462566, 'lflfu', 99999]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['12:00:00']\n['']\n['']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[298, 'American']\n[344, 'Swedish']\n[377, 'Portuguese']\n[442, 'Canadian']\n[835, 'Italian']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['British']\n['British']\n['British']\n['British']\n['Italian']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[344, '', '']\n[298, '27.63', '']\n[835, '', '']\n[344, '', '5974489']\n[344, '', '']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[298]\n[377]\n[377]\n[442]\n[344]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[298]\n[344]\n[298]\n[377]\n[298]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[344, 119.44918178977026, 'cfifs', 99999]\n[442, 477.19519201335913, 'cfifs', 100000]\n[377, 55.22550128062109, 'ugsgu', 99999]\n[344, 477.19519201335913, 'jxptz', 100000]\n[377, 909.462245349462, 'ugsgu', 100000]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[298, 981.8764344462566, 'bfzjx', 100000]\n[835, 871.5207295312708, 'ckzgy', 100000]\n[835, 311.2559998311779, 'lflfu', 99999]\n[835, 311.2559998311779, 'cytxs', 100001]\n[442, 311.2559998311779, 'lflfu', 99999]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['']\n['']\n['']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[47, 'British']\n[311, 'Dutch']\n[596, 'American']\n[760, 'Swedish']\n[800, 'American']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['German']\n['British']\n['British']\n['British']\n['Italian']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[47, '+1:57.3', '']\n[800, '41:26.1', '']\n[760, '', '']\n[596, '', '6910077']\n[596, '', '5553812']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[311]\n[47]\n[800]\n[311]\n[760]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[47]\n[596]\n[760]\n[311]\n[760]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[47, 477.19519201335913, 'owhwm', 100000]\n[311, 882.8241655715171, 'ugsgu', 100000]\n[596, 55.22550128062109, 'cfifs', 99999]\n[800, 909.462245349462, 'jxptz', 100001]\n[800, 909.462245349462, 'izymn', 100000]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[311, 311.2559998311779, 'khbhe', 99999]\n[311, 981.8764344462566, 'bfzjx', 99999]\n[596, 871.5207295312708, 'ckzgy', 99999]\n[596, 981.8764344462566, 'bfzjx', 99999]\n[47, 697.7015788560692, 'lflfu', 100000]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['']\n['']\n['']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[91, 'British']\n[339, 'Brazilian']\n[515, 'British']\n[791, 'Mexican']\n[840, 'Italian']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['French']\n['Italian']\n['French']\n['American']\n['German']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[840, '', '4712400']\n[339, '', '']\n[339, '', '']\n[339, '', '']\n[515, '', '6014665']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[840]\n[791]\n[91]\n[791]\n[515]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[791]\n[339]\n[840]\n[515]\n[339]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[91, 477.19519201335913, 'cfifs', 100001]\n[840, 55.22550128062109, 'izymn', 100000]\n[91, 55.22550128062109, 'izymn', 100001]\n[515, 119.44918178977026, 'ugsgu', 100001]\n[515, 477.19519201335913, 'jxptz', 100000]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[339, 981.8764344462566, 'bfzjx', 99999]\n[515, 155.88992134997582, 'ckzgy', 100001]\n[791, 697.7015788560692, 'cytxs', 100001]\n[339, 311.2559998311779, 'ckzgy', 100001]\n[840, 871.5207295312708, 'cytxs', 100000]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['']\n['12:00:00']\n['']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 4\nRows:\n[560, 'Italian']\n[651, 'Belgian']\n[733, 'British']\n[779, 'American']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['British']\n['American']\n['British']\n['British']\n['British']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[733, '', '6074710']\n[733, '', '']\n[779, '1.806', '5329960']\n[560, '+1:23.538', '6167490']\n[651, '52.487', '5568310']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[560]\n[560]\n[779]\n[779]\n[733]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[560]\n[651]\n[560]\n[733]\n[560]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[733, 909.462245349462, 'jxptz', 99999]\n[779, 477.19519201335913, 'owhwm', 99999]\n[779, 909.462245349462, 'jxptz', 99999]\n[651, 477.19519201335913, 'ugsgu', 100000]\n[733, 119.44918178977026, 'owhwm', 100001]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[560, 155.88992134997582, 'lflfu', 99999]\n[779, 981.8764344462566, 'khbhe', 99999]\n[779, 981.8764344462566, 'khbhe', 100000]\n[733, 871.5207295312708, 'lflfu', 100001]\n[651, 871.5207295312708, 'bfzjx', 100001]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['']\n['']\n['']\n['']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[161, 'Portuguese']\n[196, 'British']\n[270, 'American']\n[666, 'American']\n[780, 'Swiss']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['American']\n['Italian']\n['Italian']\n['Italian']\n['American']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[270, '+1:05.154', '6584185']\n[196, '42:12.3', '']\n[666, '7.185', '']\n[270, '49.74', '5792047']\n[161, '', '6415350']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[270]\n[780]\n[780]\n[780]\n[161]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[196]\n[161]\n[270]\n[161]\n[666]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[270, 909.462245349462, 'izymn', 99999]\n[270, 882.8241655715171, 'izymn', 99999]\n[666, 909.462245349462, 'owhwm', 99999]\n[270, 477.19519201335913, 'jxptz', 100000]\n[666, 55.22550128062109, 'owhwm', 99999]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[780, 311.2559998311779, 'cytxs', 99999]\n[666, 697.7015788560692, 'bfzjx', 100000]\n[270, 871.5207295312708, 'bfzjx', 100000]\n[780, 311.2559998311779, 'bfzjx', 100000]\n[666, 981.8764344462566, 'ckzgy', 99999]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['07:00:00']\n['']\n['']\n['']\n['12:00:00']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[187, 'Indonesian']\n[364, 'American']\n[535, 'American']\n[686, 'Argentine']\n[703, 'British']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 4\nRows:\n['Malaysian']\n['Belgium']\n['British']\n['American']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[187, '', '6007409']\n[364, '', '']\n[364, '', '5797113']\n[686, '', '7334399']\n[187, '', '']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[703]\n[535]\n[535]\n[535]\n[686]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[703]\n[686]\n[686]\n[703]\n[703]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[703, 882.8241655715171, 'ugsgu', 99999]\n[703, 119.44918178977026, 'ugsgu', 100000]\n[187, 477.19519201335913, 'izymn', 100000]\n[364, 477.19519201335913, 'jxptz', 99999]\n[364, 477.19519201335913, 'izymn', 99999]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[364, 981.8764344462566, 'bfzjx', 100001]\n[703, 155.88992134997582, 'ckzgy', 100000]\n[686, 311.2559998311779, 'bfzjx', 100000]\n[187, 311.2559998311779, 'cytxs', 100001]\n[703, 155.88992134997582, 'bfzjx', 100000]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?\n#Input database:\nTable: races\nColumns: ['time']\nNumber of rows: 5\nRows:\n['12:00:00']\n['12:00:00']\n['']\n['']\n['']\n\nTable: drivers\nColumns: ['driverid', 'nationality']\nNumber of rows: 5\nRows:\n[14, 'American']\n[39, 'German']\n[454, 'Japanese']\n[643, 'Japanese']\n[739, 'French']\n\nTable: constructors\nColumns: ['nationality']\nNumber of rows: 5\nRows:\n['Mexican']\n['British']\n['East German']\n['Italian']\n['British']\n\nTable: results\nColumns: ['driverid', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[14, '', '6109321']\n[643, '', '14712763']\n[739, '', '6599815']\n[14, '21.099', '']\n[39, '', '6039756']\n\nTable: driverstandings\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[739]\n[39]\n[739]\n[739]\n[643]\n\nTable: qualifying\nColumns: ['driverid']\nNumber of rows: 5\nRows:\n[454]\n[14]\n[39]\n[14]\n[39]\n\nTable: pitstops\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[643, 119.44918178977026, 'ugsgu', 99999]\n[14, 909.462245349462, 'jxptz', 100001]\n[454, 55.22550128062109, 'izymn', 100000]\n[39, 55.22550128062109, 'ugsgu', 99999]\n[14, 909.462245349462, 'owhwm', 100001]\n\nTable: laptimes\nColumns: ['driverid', 'lap', 'time', 'milliseconds']\nNumber of rows: 5\nRows:\n[14, 981.8764344462566, 'cytxs', 100001]\n[643, 697.7015788560692, 'ckzgy', 99999]\n[39, 981.8764344462566, 'bfzjx', 100001]\n[454, 697.7015788560692, 'bfzjx', 99999]\n[454, 981.8764344462566, 'lflfu', 100000]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['Kumar Swamy']\n['Eric Goldsmith']\n['Eric Goldsmith']\n['Joe Stevens']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 5\nRows:\n['AeH6', 'A Magnetic Primer Designer']\n['AeH4', 'Aerodynamics and Ice Hockey']\n['AeH3', 'Aerodynamics of a Football']\n['Ast1', 'Bacterial Transformation Efficiency']\n['Bte3', 'A Matter of Time']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 4\nRows:\n['AeH6']\n['Bte3']\n['AeH3']\n['AeH6']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['John Doe']\n['Zacary Efron']\n['Anand Manikutty']\n['Mary-Anne Foster']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 5\nRows:\n['Ast2', 'Aerodynamics and Gas Mileage']\n['AeH3', 'Aerodynamics and Ice Hockey']\n['Ast3', 'Juicy: Extracting Apple Juice with Pectinase']\n['AeH4', 'Winds: Studying Bernoullis Principle']\n['AeH2', 'Aerodynamics and Bridge Design']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 5\nRows:\n['AeH2']\n['Ast2']\n['AeH2']\n['AeH3']\n['Ast3']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['George ODonnell']\n['Anand Manikutty']\n['Kumar Swamy']\n['John Doe']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 4\nRows:\n['Bte3', 'A Silver-Cleaning Battery']\n['Ast2', 'A Matter of Time']\n['AeH1', 'Build Your Own Telescope']\n['AeH2', 'A Matter of Time']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 4\nRows:\n['Bte3']\n['Ast2']\n['AeH2']\n['Bte3']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 5\nRows:\n['Joe Stevens']\n['Zacary Efron']\n['Kumar Swamy']\n['John Doe']\n['Michael Rogers']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 4\nRows:\n['AeH4', 'A Soluble Separation Solution']\n['Bte1', 'A Matter of Time']\n['AeH5', 'Build Your Own Telescope']\n['Bte3', 'Aerodynamics and Bridge Design']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 3\nRows:\n['Bte1']\n['AeH5']\n['AeH4']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['Zacary Efron']\n['Eric Goldsmith']\n['David Smith']\n['Anand Manikutty']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 5\nRows:\n['AeH4', 'Winds: Studying Bernoullis Principle']\n['AeH2', 'Build Your Own Telescope']\n['Bte3', 'Aerodynamics of Air Hockey']\n['Che1', 'Aerodynamics and Ice Hockey']\n['Ast3', 'A Magnetic Primer Designer']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 4\nRows:\n['AeH4']\n['Che1']\n['AeH2']\n['Bte3']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 2\nRows:\n['Zacary Efron']\n['John Doe']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 5\nRows:\n['AeH3', 'Aerodynamics of a Football']\n['Ast2', 'A Puzzling Parallax']\n['AeH2', 'A Soluble Separation Solution']\n['Bte3', 'Aerodynamics and Ice Hockey']\n['AeH5', 'A Soluble Separation Solution']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 5\nRows:\n['Bte3']\n['AeH5']\n['Ast2']\n['AeH3']\n['Ast2']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['Mary-Anne Foster']\n['George ODonnell']\n['Elizabeth Doe']\n['Joe Stevens']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 5\nRows:\n['Che2', 'Aerodynamics of Air Hockey']\n['Che1', 'Aerodynamics and Ice Hockey']\n['AeH4', 'Winds: Studying Bernoullis Principle']\n['Ast1', 'Aerodynamics and Gas Mileage']\n['AeH5', 'Aerodynamics and Gas Mileage']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 5\nRows:\n['AeH4']\n['Che2']\n['AeH5']\n['Ast1']\n['Ast1']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 5\nRows:\n['Elizabeth Doe']\n['Eric Goldsmith']\n['Elizabeth Doe']\n['Anand Manikutty']\n['Kumar Swamy']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 4\nRows:\n['Bte1', 'Aerodynamics and Ice Hockey']\n['AeH1', 'Aerodynamics of Air Hockey']\n['Che1', 'A Magnetic Primer Designer']\n['AeH3', 'Build Your Own Telescope']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 5\nRows:\n['Bte1']\n['AeH3']\n['AeH1']\n['Che1']\n['Che1']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['Zacary Efron']\n['Eric Goldsmith']\n['David Smith']\n['Joe Stevens']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 4\nRows:\n['Ast3', 'A Soluble Separation Solution']\n['AeH1', 'Aerodynamics and Bridge Design']\n['Bte2', 'A Magnetic Primer Designer']\n['Bte1', 'A Soluble Separation Solution']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 3\nRows:\n['AeH1']\n['Bte1']\n['Ast3']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Select the project names which are not assigned yet.\n#Input database:\nTable: scientists\nColumns: ['name']\nNumber of rows: 4\nRows:\n['John Doe']\n['Carol Smith']\n['Eric Goldsmith']\n['Kumar Swamy']\n\nTable: projects\nColumns: ['code', 'name']\nNumber of rows: 4\nRows:\n['Bte3', 'Aerodynamics of Air Hockey']\n['AeH5', 'Aerodynamics of Air Hockey']\n['Ast3', 'Aerodynamics and Gas Mileage']\n['AeH2', 'A Soluble Separation Solution']\n\nTable: assignedto\nColumns: ['project']\nNumber of rows: 5\nRows:\n['Ast3']\n['Ast3']\n['Bte3']\n['AeH5']\n['AeH2']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 4\nRows:\n[6, 7, 'Cullen', 'Goldner', 'Skilled']\n[11, 11, 'Weston', 'Harvey', 'Skilled']\n[14, 7, 'Weston', 'Harvey', 'Skilled']\n[15, 11, 'Courtney', 'Adams', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[14, 1]\n[11, 1]\n[11, 1]\n[6, 3]\n[6, 1]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 5\nRows:\n[3, 8, 6, 10, 'Waiting', '1980-05-02 23:31:18', '2007-11-12 04:24:01', 'cuvre']\n[4, 7, 15, 14, 'Fixed', '2006-03-31 20:03:10', '1988-10-20 12:02:00', 'tudru']\n[6, 1, 15, 10, 'Reported', '1970-07-19 19:21:32', '1990-08-30 22:44:16', 'rtzet']\n[11, 1, 11, 10, 'Waiting', '1970-07-19 19:21:32', '2008-03-24 22:18:47', 'rtzet']\n[15, 7, 15, 7, 'Return', '1975-04-06 11:09:23', '2007-11-12 04:24:01', 'cuvre']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 4\nRows:\n[2, 7, 'Alexys', 'Simonis', 'Skilled']\n[8, 14, 'Weston', 'Kunde', 'Skilled']\n[10, 7, 'Etha', 'Hahn', 'Skilled']\n[15, 15, 'Courtney', 'Price', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[8, 3]\n[8, 2]\n[2, 1]\n[15, 2]\n[2, 1]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 5\nRows:\n[1, 13, 15, 2, 'Fixed', '2006-03-31 20:03:10', '2008-03-24 22:18:47', 'cuvre']\n[3, 3, 2, 2, 'Fixed', '1975-04-06 11:09:23', '1980-12-19 08:30:46', 'tudru']\n[8, 3, 15, 6, 'Fixed', '2006-03-31 20:03:10', '1980-12-19 08:30:46', 'tudru']\n[12, 13, 15, 5, 'Reported', '2015-07-05 21:37:55', '1990-08-30 22:44:16', 'rtzet']\n[15, 2, 2, 6, 'Reported', '1970-07-19 19:21:32', '2007-11-12 04:24:01', 'tudru']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 5\nRows:\n[3, 10, 'Weston', 'Price', 'Skilled']\n[5, 8, 'Jules', 'Hirthe', 'Skilled']\n[6, 14, 'Nellie', 'Hirthe', 'Skilled']\n[13, 14, 'Cullen', 'Simonis', 'Skilled']\n[15, 10, 'Clemens', 'Kunde', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[6, 2]\n[15, 3]\n[6, 1]\n[13, 2]\n[3, 3]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 5\nRows:\n[7, 11, 15, 9, 'Return', '2006-03-31 20:03:10', '1971-03-29 23:46:30', 'rtzet']\n[9, 15, 5, 3, 'Waiting', '1997-06-23 17:45:21', '1988-01-07 06:41:51', 'tudru']\n[11, 15, 13, 3, 'Reported', '1984-07-14 22:47:51', '2012-11-27 06:26:01', 'rtzet']\n[12, 15, 6, 3, 'Fixed', '2010-02-23 18:16:23', '1970-03-25 14:44:29', 'ehdxm']\n[14, 1, 5, 3, 'Waiting', '1991-05-02 01:39:59', '1990-08-30 22:44:16', 'cuvre']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 5\nRows:\n[8, 12, 'Cullen', 'Harvey', 'Skilled']\n[11, 3, 'Alexys', 'Hauck', 'Skilled']\n[12, 5, 'Samanta', 'Adams', 'Skilled']\n[13, 9, 'Manley', 'Stamm', 'Skilled']\n[14, 12, 'Nellie', 'Streich', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[14, 2]\n[8, 2]\n[11, 3]\n[12, 3]\n[8, 3]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 4\nRows:\n[1, 5, 12, 7, 'Return', '2006-03-31 20:03:10', '1973-09-12 07:06:54', 'rtzet']\n[2, 12, 12, 10, 'Waiting', '2006-03-31 20:03:10', '1971-03-29 23:46:30', 'ehdxm']\n[9, 10, 12, 7, 'Waiting', '1996-11-07 05:31:35', '1982-05-13 02:08:41', 'cuvre']\n[12, 12, 11, 7, 'Return', '1975-04-06 11:09:23', '1971-03-29 23:46:30', 'tudru']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 5\nRows:\n[1, 5, 'Cullen', 'Orn', 'Skilled']\n[4, 5, 'Brian', 'Simonis', 'Skilled']\n[7, 8, 'Lorine', 'Hahn', 'Skilled']\n[10, 5, 'Clemens', 'Kunde', 'Skilled']\n[11, 1, 'Naomi', 'Hahn', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[10, 2]\n[10, 2]\n[10, 3]\n[11, 2]\n[1, 3]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 5\nRows:\n[4, 10, 10, 13, 'Fixed', '2010-02-23 18:16:23', '1990-08-30 22:44:16', 'ehdxm']\n[9, 13, 4, 13, 'Waiting', '1991-05-02 01:39:59', '2012-11-27 06:26:01', 'tudru']\n[12, 5, 11, 11, 'Fixed', '1994-07-27 22:35:48', '2007-11-12 04:24:01', 'rtzet']\n[13, 5, 11, 11, 'Return', '2010-02-23 18:16:23', '1980-12-19 08:30:46', 'cuvre']\n[14, 14, 7, 11, 'Waiting', '1980-05-02 23:31:18', '1988-01-07 06:41:51', 'ehdxm']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 3\nRows:\n[2, 6, 'Lorine', 'Goldner', 'Skilled']\n[9, 12, 'Brian', 'Goldner', 'Skilled']\n[13, 7, 'Lorine', 'Adams', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[9, 2]\n[2, 1]\n[13, 3]\n[2, 1]\n[2, 1]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 3\nRows:\n[4, 10, 2, 13, 'Fixed', '2015-07-05 21:37:55', '1973-09-12 07:06:54', 'tudru']\n[7, 10, 9, 4, 'Waiting', '2015-07-05 21:37:55', '1988-01-07 06:41:51', 'ehdxm']\n[15, 10, 9, 15, 'Fixed', '1985-08-26 01:02:49', '1980-12-19 08:30:46', 'ehdxm']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 4\nRows:\n[9, 3, 'Josie', 'Streich', 'Skilled']\n[10, 1, 'Weston', 'Grady', 'Skilled']\n[12, 8, 'Courtney', 'Hauck', 'Skilled']\n[14, 8, 'Manley', 'Streich', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[9, 2]\n[9, 2]\n[10, 2]\n[10, 2]\n[12, 2]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 3\nRows:\n[4, 13, 12, 14, 'Reported', '1978-10-12 23:14:40', '2008-03-24 22:18:47', 'tudru']\n[6, 14, 10, 5, 'Fixed', '1996-07-12 22:38:46', '1982-05-13 02:08:41', 'ehdxm']\n[9, 13, 14, 5, 'Reported', '2010-02-23 18:16:23', '1988-01-07 06:41:51', 'ehdxm']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 4\nRows:\n[5, 1, 'Courtney', 'Reinger', 'Skilled']\n[7, 8, 'Alexys', 'Orn', 'Skilled']\n[12, 8, 'Lorine', 'Morar', 'Skilled']\n[15, 13, 'Jules', 'Grady', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[7, 3]\n[7, 2]\n[15, 2]\n[15, 1]\n[5, 3]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 4\nRows:\n[2, 5, 15, 13, 'Fixed', '1984-07-14 22:47:51', '1970-08-01 15:35:51', 'rtzet']\n[4, 13, 15, 13, 'Reported', '2015-07-05 21:37:55', '1982-05-13 02:08:41', 'rtzet']\n[6, 5, 5, 13, 'Fixed', '1985-08-26 01:02:49', '2010-07-05 18:36:22', 'vutxo']\n[12, 5, 12, 11, 'Waiting', '1996-07-06 23:59:49', '1990-08-30 22:44:16', 'tudru']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 5\nRows:\n[3, 14, 'Cullen', 'Kunde', 'Skilled']\n[4, 4, 'Weston', 'Hahn', 'Skilled']\n[7, 12, 'Clemens', 'Goldner', 'Skilled']\n[9, 7, 'Samanta', 'Price', 'Skilled']\n[15, 12, 'Alexys', 'Adams', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[7, 1]\n[15, 3]\n[15, 3]\n[15, 3]\n[4, 3]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 5\nRows:\n[2, 15, 15, 9, 'Return', '1994-07-27 22:35:48', '1988-01-07 06:41:51', 'tudru']\n[7, 4, 4, 11, 'Waiting', '1991-05-02 01:39:59', '1971-03-29 23:46:30', 'ehdxm']\n[8, 4, 4, 11, 'Fixed', '1975-04-06 11:09:23', '1982-05-13 02:08:41', 'cuvre']\n[9, 1, 7, 4, 'Fixed', '2006-03-31 20:03:10', '1988-01-07 06:41:51', 'vutxo']\n[10, 15, 9, 4, 'Waiting', '1978-10-12 23:14:40', '2010-07-05 18:36:22', 'rtzet']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.\n#Input database:\nTable: maintenance_engineers\nColumns: ['engineer_id', 'company_id', 'first_name', 'last_name', 'other_details']\nNumber of rows: 5\nRows:\n[1, 3, 'Nellie', 'Grady', 'Skilled']\n[6, 4, 'Etha', 'Price', 'Skilled']\n[7, 3, 'Samanta', 'Orn', 'Skilled']\n[8, 15, 'Nellie', 'Morar', 'Skilled']\n[11, 3, 'Naomi', 'Hauck', 'Skilled']\n\nTable: engineer_skills\nColumns: ['engineer_id', 'skill_id']\nNumber of rows: 5\nRows:\n[1, 1]\n[7, 2]\n[11, 3]\n[8, 1]\n[1, 2]\n\nTable: engineer_visits\nColumns: ['engineer_visit_id', 'contact_staff_id', 'engineer_id', 'fault_log_entry_id', 'fault_status', 'visit_start_datetime', 'visit_end_datetime', 'other_visit_details']\nNumber of rows: 5\nRows:\n[1, 3, 8, 9, 'Return', '1980-05-02 23:31:18', '1973-09-12 07:06:54', 'tudru']\n[4, 3, 1, 12, 'Fixed', '1996-07-06 23:59:49', '1990-08-30 22:44:16', 'cuvre']\n[7, 1, 7, 9, 'Return', '1980-05-02 23:31:18', '1988-10-20 12:02:00', 'ehdxm']\n[10, 1, 1, 13, 'Waiting', '1975-04-06 11:09:23', '1973-09-12 07:06:54', 'vutxo']\n[14, 4, 7, 12, 'Fixed', '1997-06-23 17:45:21', '2008-03-24 22:18:47', 'tudru']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Lambeau', '144', 32]\n['Main', '86', 109]\n['Fairchild', '547', 34]\n['Garfield', '707', 24]\n['Alumni', '104', 26]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 5\nRows:\n['Physics', 'Main', 441840.92]\n['Mech. Eng.', 'Taylor', 777605.11]\n['Comp. Sci.', 'Candlestick', 573745.09]\n['Marketing', 'Main', 617253.94]\n['Pol. Sci.', 'Whitman', 942162.76]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['393', '1', 'Fall', 2006, 'Fairchild', '86', 'P']\n['769', '1', 'Spring', 2009, 'Main', '144', 'F']\n['393', '0', 'Fall', 2003, 'Garfield', '104', 'J']\n['126', '1', 'Spring', 2008, 'Main', '144', 'P']\n['769', '1', 'Spring', 2002, 'Fairchild', '707', 'D']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Main', '45', 11]\n['Drown', '844', 26]\n['Whitman', '547', 115]\n['Alumni', '805', 60]\n['Nassau', '134', 51]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 5\nRows:\n['Pol. Sci.', 'Palmer', 395051.74]\n['Civil Eng.', 'Lamberton', 699140.86]\n['Cybernetics', 'Wrigley', 106378.69]\n['Psychology', 'Taylor', 441840.92]\n['Statistics', 'Thompson', 699140.86]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['345', '1', 'Spring', 2010, 'Whitman', '844', 'A']\n['273', '1', 'Spring', 2010, 'Main', '45', 'O']\n['347', '2', 'Fall', 2002, 'Drown', '45', 'M']\n['571', '1', 'Fall', 2005, 'Alumni', '805', 'L']\n['571', '2', 'Fall', 2003, 'Drown', '844', 'C']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Painter', '45', 115]\n['Grace', '701', 12]\n['Taylor', '105', 34]\n['Alumni', '44', 12]\n['Saucon', '972', 71]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 5\nRows:\n['Civil Eng.', 'Bronfman', 395051.74]\n['Geology', 'Candlestick', 699140.86]\n['Math', 'Taylor', 406557.93]\n['Marketing', 'Rauch', 276527.61]\n['Statistics', 'Rauch', 441840.92]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['293', '1', 'Spring', 2008, 'Painter', '44', 'D']\n['544', '1', 'Spring', 2002, 'Alumni', '105', 'K']\n['819', '2', 'Fall', 2010, 'Painter', '972', 'O']\n['581', '1', 'Fall', 2003, 'Grace', '44', 'H']\n['228', '2', 'Spring', 2005, 'Taylor', '972', 'J']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Rathbone', '349', 10]\n['Lamberton', '807', 97]\n['Saucon', '184', 65]\n['Saucon', '811', 113]\n['Nassau', '313', 15]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 4\nRows:\n['Elec. Eng.', 'Lambeau', 601283.6]\n['Athletics', 'Candlestick', 699140.86]\n['Finance', 'Candlestick', 777605.11]\n['Civil Eng.', 'Rauch', 573745.09]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['958', '1', 'Fall', 2007, 'Lamberton', '349', 'F']\n['762', '1', 'Fall', 2009, 'Saucon', '184', 'K']\n['559', '1', 'Spring', 2005, 'Nassau', '811', 'O']\n['958', '1', 'Fall', 2002, 'Nassau', '349', 'P']\n['974', '1', 'Fall', 2002, 'Lamberton', '811', 'B']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Lamberton', '433', 22]\n['Stabler', '44', 18]\n['Painter', '756', 30]\n['Drown', '844', 10]\n['Drown', '134', 10]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 5\nRows:\n['Mech. Eng.', 'Bronfman', 395051.74]\n['Athletics', 'Taylor', 794541.46]\n['History', 'Mercer', 794541.46]\n['Accounting', 'Thompson', 276527.61]\n['Finance', 'Chandler', 699140.86]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['657', '1', 'Fall', 2005, 'Lamberton', '134', 'F']\n['550', '4', 'Fall', 2006, 'Painter', '433', 'E']\n['681', '1', 'Spring', 2007, 'Lamberton', '44', 'A']\n['550', '1', 'Spring', 2006, 'Stabler', '844', 'I']\n['657', '1', 'Fall', 2008, 'Lamberton', '44', 'B']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Saucon', '973', 26]\n['Chandler', '143', 15]\n['Painter', '548', 109]\n['Grace', '756', 97]\n['Stabler', '313', 24]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 5\nRows:\n['Accounting', 'Lamberton', 406557.93]\n['Statistics', 'Palmer', 573745.09]\n['Comp. Sci.', 'Thompson', 617253.94]\n['Biology', 'Bronfman', 942162.76]\n['Geology', 'Bronfman', 866831.75]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['351', '1', 'Fall', 2004, 'Saucon', '973', 'A']\n['990', '1', 'Fall', 2010, 'Saucon', '548', 'M']\n['801', '1', 'Spring', 2007, 'Stabler', '756', 'J']\n['170', '1', 'Spring', 2009, 'Saucon', '548', 'E']\n['351', '1', 'Spring', 2006, 'Stabler', '313', 'D']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Chandler', '546', 32]\n['Stabler', '146', 10]\n['Saucon', '804', 115]\n['Power', '425', 92]\n['Painter', '546', 109]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 5\nRows:\n['Astronomy', 'Candlestick', 611042.66]\n['Comp. Sci.', 'Rauch', 942162.76]\n['History', 'Taylor', 777605.11]\n['Physics', 'Brodhead', 395051.74]\n['Biology', 'Thompson', 395051.74]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['970', '1', 'Spring', 2006, 'Power', '425', 'I']\n['983', '1', 'Spring', 2009, 'Painter', '146', 'O']\n['304', '1', 'Spring', 2010, 'Stabler', '146', 'E']\n['304', '2', 'Fall', 2007, 'Stabler', '146', 'D']\n['983', '1', 'Spring', 2008, 'Saucon', '425', 'I']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Painter', '716', 92]\n['Whitman', '135', 113]\n['Whitman', '315', 10]\n['Lamberton', '44', 11]\n['Chandler', '845', 15]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 4\nRows:\n['Marketing', 'Bronfman', 395051.74]\n['Mech. Eng.', 'Whitman', 647610.55]\n['Accounting', 'Taylor', 255041.46]\n['Statistics', 'Taylor', 520350.65]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['483', '1', 'Fall', 2008, 'Chandler', '315', 'N']\n['892', '2', 'Fall', 2006, 'Painter', '845', 'O']\n['483', '2', 'Fall', 2007, 'Chandler', '716', 'G']\n['892', '1', 'Spring', 2004, 'Painter', '44', 'F']\n['458', '2', 'Fall', 2005, 'Chandler', '716', 'J']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Garfield', '45', 34]\n['Whitman', '757', 113]\n['Polya', '85', 65]\n['Saucon', '813', 65]\n['Lamberton', '143', 32]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 4\nRows:\n['Math', 'Taylor', 106378.69]\n['Accounting', 'Chandler', 617253.94]\n['Civil Eng.', 'Saucon', 520350.65]\n['Cybernetics', 'Main', 210627.58]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['780', '1', 'Spring', 2002, 'Saucon', '757', 'C']\n['400', '1', 'Fall', 2010, 'Lamberton', '143', 'M']\n['966', '1', 'Fall', 2010, 'Polya', '757', 'H']\n['780', '1', 'Spring', 2003, 'Saucon', '813', 'N']\n['780', '1', 'Fall', 2003, 'Saucon', '85', 'M']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: Count the number of rooms that are not in the Lamberton building.\n#Input database:\nTable: classroom\nColumns: ['building', 'room_number', 'capacity']\nNumber of rows: 5\nRows:\n['Whitman', '758', 24]\n['Painter', '181', 10]\n['Stabler', '106', 27]\n['Garfield', '809', 59]\n['Taylor', '85', 60]\n\nTable: department\nColumns: ['dept_name', 'building', 'budget']\nNumber of rows: 3\nRows:\n['Pol. Sci.', 'Rauch', 520350.65]\n['Civil Eng.', 'Rauch', 106378.69]\n['Mech. Eng.', 'Palmer', 777605.11]\n\nTable: section\nColumns: ['course_id', 'sec_id', 'semester', 'year', 'building', 'room_number', 'time_slot_id']\nNumber of rows: 5\nRows:\n['630', '1', 'Fall', 2010, 'Stabler', '809', 'F']\n['633', '1', 'Fall', 2010, 'Stabler', '85', 'I']\n['633', '1', 'Spring', 2006, 'Painter', '809', 'O']\n['633', '1', 'Fall', 2005, 'Whitman', '758', 'H']\n['918', '1', 'Spring', 2006, 'Painter', '85', 'D']\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[20, 0]\n[90, 0]\n[200, 0]\n[50, 0]\n[130, 204]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[113, 0, 130]\n[181, 120, 130]\n[107, 201, 200]\n[178, 123, 90]\n[155, 108, 90]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[181, 20]\n[107, 50]\n[181, 90]\n[155, 50]\n[178, 90]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[50, 0]\n[10, 0]\n[200, 108]\n[220, 0]\n[30, 0]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 4\nRows:\n[191, 120, 30]\n[172, 120, 220]\n[169, 121, 200]\n[198, 103, 30]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[198, 10]\n[169, 50]\n[198, 50]\n[169, 220]\n[191, 220]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[200, 201]\n[240, 0]\n[250, 0]\n[20, 205]\n[90, 0]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[183, 102, 250]\n[124, 124, 250]\n[119, 145, 20]\n[110, 101, 90]\n[151, 145, 240]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[110, 250]\n[124, 90]\n[119, 240]\n[151, 200]\n[110, 200]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[140, 0]\n[120, 100]\n[230, 0]\n[60, 204]\n[90, 205]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 4\nRows:\n[197, 145, 140]\n[165, 146, 60]\n[156, 114, 60]\n[193, 120, 140]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 4\nRows:\n[193, 140]\n[193, 60]\n[165, 230]\n[197, 230]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 4\nRows:\n[100, 0]\n[190, 0]\n[40, 201]\n[180, 0]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[156, 124, 40]\n[167, 147, 100]\n[121, 100, 100]\n[187, 145, 180]\n[178, 100, 190]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[187, 100]\n[156, 180]\n[121, 100]\n[178, 40]\n[156, 100]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 3\nRows:\n[90, 0]\n[80, 0]\n[30, 0]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[107, 114, 80]\n[110, 147, 80]\n[152, 124, 80]\n[146, 100, 80]\n[188, 147, 30]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[107, 30]\n[146, 90]\n[107, 90]\n[110, 80]\n[146, 80]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[60, 121]\n[250, 0]\n[10, 203]\n[200, 200]\n[100, 0]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[177, 123, 200]\n[152, 120, 100]\n[108, 147, 60]\n[197, 145, 10]\n[189, 0, 250]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[108, 100]\n[197, 200]\n[177, 10]\n[152, 60]\n[189, 200]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[180, 0]\n[140, 0]\n[150, 0]\n[240, 0]\n[50, 205]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[195, 124, 140]\n[150, 147, 50]\n[169, 121, 140]\n[175, 122, 50]\n[142, 120, 150]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[175, 240]\n[195, 240]\n[195, 140]\n[142, 180]\n[142, 240]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[90, 0]\n[140, 0]\n[50, 114]\n[160, 0]\n[260, 0]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[131, 149, 160]\n[104, 147, 160]\n[138, 145, 160]\n[116, 124, 90]\n[140, 205, 140]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 5\nRows:\n[138, 260]\n[104, 90]\n[104, 140]\n[116, 50]\n[140, 260]\n\n#Output:",
+    "### Given a database and a natural language question, please select the cells of the database or get aggregation results.\n### The output should be several rows selected from the database or several aggregation results.\n\n#Input natural language question: What are department ids for departments with managers managing more than 3 employees?\n#Input database:\nTable: departments\nColumns: ['department_id', 'manager_id']\nNumber of rows: 5\nRows:\n[250, 100]\n[40, 0]\n[200, 0]\n[230, 0]\n[160, 145]\n\nTable: employees\nColumns: ['employee_id', 'manager_id', 'department_id']\nNumber of rows: 5\nRows:\n[129, 123, 230]\n[154, 147, 200]\n[143, 101, 200]\n[148, 100, 250]\n[116, 148, 200]\n\nTable: job_history\nColumns: ['employee_id', 'department_id']\nNumber of rows: 3\nRows:\n[143, 200]\n[129, 200]\n[148, 160]\n\n#Output:"
+  ],
+  "original_infos": [
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_0.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_1.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_2.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_3.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_4.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_5.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_6.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_7.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_8.db",
+      "data_index": 0
+    },
+    {
+      "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+      "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10",
+      "db_id": "storm_record",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/select_values_test_case/db_train_0_9.db",
+      "data_index": 0
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_0.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_1.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_2.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_3.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_4.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_5.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_6.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_7.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_8.db",
+      "data_index": 1
+    },
+    {
+      "question": "Which policy type appears most frequently in the available policies?",
+      "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1",
+      "db_id": "insurance_fnol",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/select_values_test_case/db_train_1_9.db",
+      "data_index": 1
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_0.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_1.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_2.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_3.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_4.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_5.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_6.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_7.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_8.db",
+      "data_index": 2
+    },
+    {
+      "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+      "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1",
+      "db_id": "movie_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/select_values_test_case/db_train_2_9.db",
+      "data_index": 2
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_0.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_1.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_2.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_3.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_4.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_5.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_6.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_7.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_8.db",
+      "data_index": 3
+    },
+    {
+      "question": "Which last names are both used by customers and by staff?",
+      "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff",
+      "db_id": "driving_school",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/select_values_test_case/db_train_3_9.db",
+      "data_index": 3
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_0.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_1.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_2.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_3.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_4.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_5.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_6.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_7.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_8.db",
+      "data_index": 4
+    },
+    {
+      "question": "List the names of all the distinct customers who bought a keyboard.",
+      "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\"",
+      "db_id": "department_store",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/select_values_test_case/db_train_4_9.db",
+      "data_index": 4
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_0.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_1.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_2.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_3.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_4.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_5.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_6.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_7.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_8.db",
+      "data_index": 5
+    },
+    {
+      "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+      "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000",
+      "db_id": "formula_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/select_values_test_case/db_train_5_9.db",
+      "data_index": 5
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_0.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_1.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_2.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_3.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_4.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_5.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_6.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_7.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_8.db",
+      "data_index": 6
+    },
+    {
+      "question": "Select the project names which are not assigned yet.",
+      "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)",
+      "db_id": "scientist_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/select_values_test_case/db_train_6_9.db",
+      "data_index": 6
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_0.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_1.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_2.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_3.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_4.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_5.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_6.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_7.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_8.db",
+      "data_index": 7
+    },
+    {
+      "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+      "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1",
+      "db_id": "assets_maintenance",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/select_values_test_case/db_train_7_9.db",
+      "data_index": 7
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_0.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_1.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_2.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_3.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_4.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_5.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_6.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_7.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_8.db",
+      "data_index": 8
+    },
+    {
+      "question": "Count the number of rooms that are not in the Lamberton building.",
+      "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'",
+      "db_id": "college_2",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/select_values_test_case/db_train_8_9.db",
+      "data_index": 8
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_0.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_1.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_2.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_3.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_4.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_5.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_6.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_7.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_8.db",
+      "data_index": 9
+    },
+    {
+      "question": "What are department ids for departments with managers managing more than 3 employees?",
+      "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4",
+      "db_id": "hr_1",
+      "db_path": "/mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/select_values_test_case/db_train_9_9.db",
+      "data_index": 9
+    }
+  ]
+}

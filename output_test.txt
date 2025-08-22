@@ -1,0 +1,54 @@
+INFO 08-22 10:15:16 __init__.py:193] Automatically detected platform cuda.
+
+--- 阶段 1: 生成模糊测试提示 ---
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/storm_record/storm_record.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/insurance_fnol/insurance_fnol.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/movie_1/movie_1.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/driving_school/driving_school.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/department_store/department_store.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/formula_1/formula_1.sqlite 作为基础。
+[WARNING] No valid data for ('pitstops', 'TIME'), generated 5 fallback elements: ['ugsgu', 'izymn', 'owhwm']...
+[WARNING] No valid data for ('pitstops', 'STOP'), generated 5 fallback elements: [849.2520395146477, 679.1150277045145, 116.88195694779724]...
+[WARNING] No valid data for ('pitstops', 'LAP'), generated 5 fallback elements: [909.462245349462, 119.44918178977026, 882.8241655715171]...
+[WARNING] No valid data for ('laptimes', 'TIME'), generated 5 fallback elements: ['lflfu', 'cytxs', 'khbhe']...
+[WARNING] No valid data for ('pitstops', 'DURATION'), generated 5 fallback elements: ['arhdp', 'matfv', 'qqvrh']...
+[WARNING] No valid data for ('laptimes', 'POSITION'), generated 5 fallback elements: [865.9906907196629, 955.5133818082784, 327.29862150837687]...
+[WARNING] No valid data for ('laptimes', 'LAP'), generated 5 fallback elements: [981.8764344462566, 871.5207295312708, 155.88992134997582]...
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/scientist_1/scientist_1.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/assets_maintenance/assets_maintenance.sqlite 作为基础。
+[WARNING] No valid data for ('parts', 'OTHER_PART_DETAILS'), generated 5 fallback elements: ['vtxce', 'sbllh', 'xvfvb']...
+[WARNING] No valid data for ('engineer_visits', 'OTHER_VISIT_DETAILS'), generated 5 fallback elements: ['rtzet', 'vutxo', 'ehdxm']...
+[WARNING] No valid data for ('fault_log', 'OTHER_FAULT_DETAILS'), generated 5 fallback elements: ['sxcpt', 'tnpxq', 'syzdv']...
+[WARNING] No valid data for ('maintenance_contracts', 'OTHER_CONTRACT_DETAILS'), generated 5 fallback elements: ['hoheh', 'llvmu', 'ccibf']...
+[WARNING] No valid data for ('part_faults', 'OTHER_FAULT_DETAILS'), generated 5 fallback elements: ['ogcgm', 'tavbf', 'clwew']...
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/college_2/college_2.sqlite 作为基础。
+使用原始数据库 /mnt/public/data/lh/data/xc/sql_testcase_filter/data/database/hr_1/hr_1.sqlite 作为基础。
+共为测试生成了 100 个数据库条目。
+已将提示和原始信息保存到 'prompts_and_infos.json' 文件中。
+
+--- 阶段 2: 使用 LLM 生成并评估测试用例 ---
+Total prompts to predict: 100
+INFO 08-22 10:16:45 config.py:542] This model supports multiple tasks: {'reward', 'generate', 'classify', 'embed', 'score'}. Defaulting to 'generate'.
+INFO 08-22 10:16:45 llm_engine.py:235] Initializing a V0 LLM engine (v0.7.2) with config: model='/mnt/public/data/lh/data/xc/LLaMA-Factory/saves/Qwen2.5-7B-Instruct/ckpts/checkpoint-10275', speculative_config=None, tokenizer='/mnt/public/data/lh/data/xc/LLaMA-Factory/saves/Qwen2.5-7B-Instruct/ckpts/checkpoint-10275', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=/mnt/public/data/lh/data/xc/LLaMA-Factory/saves/Qwen2.5-7B-Instruct/ckpts/checkpoint-10275, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=False, 
+INFO 08-22 10:16:49 cuda.py:230] Using Flash Attention backend.
+INFO 08-22 10:16:49 model_runner.py:1110] Starting to load model /mnt/public/data/lh/data/xc/LLaMA-Factory/saves/Qwen2.5-7B-Instruct/ckpts/checkpoint-10275...
+INFO 08-22 10:17:36 model_runner.py:1115] Loading model weights took 14.2487 GB
+INFO 08-22 10:17:39 worker.py:267] Memory profiling takes 3.05 seconds
+INFO 08-22 10:17:39 worker.py:267] the current vLLM instance can use total_gpu_memory (63.59GiB) x gpu_memory_utilization (0.90) = 57.23GiB
+INFO 08-22 10:17:39 worker.py:267] model weights take 14.25GiB; non_torch_memory takes 5.11GiB; PyTorch activation peak memory takes 4.38GiB; the rest of the memory reserved for KV Cache is 33.50GiB.
+INFO 08-22 10:17:39 executor_base.py:110] # CUDA blocks: 39209, # CPU blocks: 4681
+INFO 08-22 10:17:39 executor_base.py:115] Maximum concurrency for 32768 tokens per request: 19.15x
+INFO 08-22 10:17:42 model_runner.py:1434] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 08-22 10:17:52 model_runner.py:1562] Graph capturing finished in 10 secs, took 0.15 GiB
+INFO 08-22 10:17:52 llm_engine.py:432] init engine (profile, create kv cache, warmup model) took 15.89 seconds
+finished prompts: 100
+
+完整的测试套件评估结果已保存至: data/train_select_values_test_suite_checkpoint-10275.pkl
+
+--- 阶段 3: 根据评估结果筛选数据集 ---
+筛选后满足条件（一致性>=60.0%）的数据条数: 10
+原始数据集大小: 10
+最终筛选出的数据集大小: 10
+筛选后的数据已保存至: data/output_test.json
+
+所有流程完成！

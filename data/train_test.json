@@ -1,0 +1,52 @@
+[
+    {
+        "db_id": "storm_record",
+        "question": "What are the names of storms that both affected two or more regions and affected a total of 10 or more cities?",
+        "sql": "SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING count(*)  >=  2 INTERSECT SELECT T1.name FROM storm AS T1 JOIN affected_region AS T2 ON T1.storm_id  =  T2.storm_id GROUP BY T1.storm_id HAVING sum(T2.number_city_affected)  >=  10"
+    },
+    {
+        "db_id": "insurance_fnol",
+        "question": "Which policy type appears most frequently in the available policies?",
+        "sql": "SELECT policy_type_code FROM available_policies GROUP BY policy_type_code ORDER BY count(*) DESC LIMIT 1"
+    },
+    {
+        "db_id": "movie_1",
+        "question": "What are the titles and average ratings for all movies that have the lowest average rating?",
+        "sql": "SELECT T2.title ,  avg(T1.stars) FROM Rating AS T1 JOIN Movie AS T2 ON T1.mID  =  T2.mID GROUP BY T1.mID ORDER BY avg(T1.stars) LIMIT 1"
+    },
+    {
+        "db_id": "driving_school",
+        "question": "Which last names are both used by customers and by staff?",
+        "sql": "SELECT last_name FROM Customers INTERSECT SELECT last_name FROM Staff"
+    },
+    {
+        "db_id": "department_store",
+        "question": "List the names of all the distinct customers who bought a keyboard.",
+        "sql": "SELECT DISTINCT T1.customer_name FROM customers AS T1 JOIN customer_orders AS T2 ON T1.customer_id  =  T2.customer_id JOIN order_items AS T3 ON T2.order_id  =  T3.order_id JOIN products AS T4 ON T3.product_id  =  T4.product_id WHERE T4.product_name  =  \"keyboard\""
+    },
+    {
+        "db_id": "formula_1",
+        "question": "Find all the distinct id and nationality of drivers who have had laptime more than 100000 milliseconds?",
+        "sql": "SELECT DISTINCT T1.driverid ,  T1.nationality FROM drivers AS T1 JOIN laptimes AS T2 ON T1.driverid = T2.driverid WHERE T2.milliseconds >  100000"
+    },
+    {
+        "db_id": "scientist_1",
+        "question": "Select the project names which are not assigned yet.",
+        "sql": "SELECT Name FROM Projects WHERE Code NOT IN (SELECT Project FROM AssignedTo)"
+    },
+    {
+        "db_id": "assets_maintenance",
+        "question": "Among those engineers who have visited, which engineer makes the least number of visits? List the engineer id, first name and last name.",
+        "sql": "SELECT T1.engineer_id ,  T1.first_name ,  T1.last_name FROM Maintenance_Engineers AS T1 JOIN Engineer_Visits AS T2 ON T1.engineer_id  =  T2.engineer_id GROUP BY T1.engineer_id ORDER BY count(*) ASC LIMIT 1"
+    },
+    {
+        "db_id": "college_2",
+        "question": "Count the number of rooms that are not in the Lamberton building.",
+        "sql": "SELECT count(*) FROM classroom WHERE building != 'Lamberton'"
+    },
+    {
+        "db_id": "hr_1",
+        "question": "What are department ids for departments with managers managing more than 3 employees?",
+        "sql": "SELECT DISTINCT department_id FROM employees GROUP BY department_id ,  manager_id HAVING COUNT(employee_id)  >= 4"
+    }
+]
